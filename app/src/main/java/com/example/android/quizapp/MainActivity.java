@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
    int score;
-    RadioGroup radioGroup;
-    private RadioButton radioButton;
+    RadioGroup radioGroup,radioGroup1,radioGroup2,radioGroup3,radioGroup4;
+    private RadioButton radioButton,radioButton1,radioButton2,radioButton3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,105 +32,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void selectedRadio()
     {
-        radioGroup = findViewById(R.id.radioGroup1);
-        radioGroup = findViewById(R.id.radioGroup2);
-        radioGroup = findViewById(R.id.radioGroup3);
-        radioGroup = findViewById(R.id.radioGroup4);
+        radioGroup1 = findViewById(R.id.radioGroup1);
+        radioGroup2= findViewById(R.id.radioGroup2);
+        radioGroup3 = findViewById(R.id.radioGroup3);
+        radioGroup4 = findViewById(R.id.radioGroup4);
 
 
 
     }
 
-
-    /*public void checkButton(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.mercury:
-                if (checked)
-                    score += 2;
-                break;
-            case R.id.jupiter:
-                if (checked)
-                    score += 0;
-                break;
-            case R.id.mars:
-                if (checked)
-                    score += 0;
-                break;
-            case R.id.earth:
-                if (checked)
-                    score += 0;
-                break;
-
-        }
-
-        switch (view.getId()) {
-            case R.id.south_africa:
-                if (checked)
-                    score += 2;
-                break;
-
-            case R.id.denmark:
-                if (checked)
-                    score += 0;
-                break;
-            case R.id.europe:
-                if (checked)
-                    score += 0;
-                break;
-            case R.id.kenya:
-                if (checked)
-                    score += 0;
-                break;
-        }
-
-        switch (view.getId()) {
-            case R.id.everest:
-                if (checked)
-                    score += 2;
-                break;
-
-            case R.id.mc_kinley:
-                if (checked)
-                    score += 0;
-                break;
-            case R.id.nanga_parbat:
-                if (checked)
-                    score += 0;
-                break;
-            case R.id.kilimanjaro:
-                if (checked)
-                    score += 0;
-                break;
-        }
-
-        switch (view.getId()) {
-        case R.id.nile:
-            if (checked)
-                score += 2;
-            break;
-
-        case R.id.amazon:
-            if (checked)
-                score += 0;
-            break;
-        case R.id.niger:
-            if (checked)
-                score += 0;
-            break;
-        case R.id.amur:
-            if (checked)
-                score += 0;
-            break;
-    }
-
-
-    }
-    */
-
+    
     public void submitScore (View view)
     {
         // get selected radio button from radioGroup
@@ -154,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-        radioButton = (RadioButton) findViewById(selectedId);
-        switch (radioButton.getText().toString()) {
+        radioButton1 = findViewById(selectedId);
+        switch (radioButton1.getText().toString()) {
             case "SouthAfrica":
                 score += 2;
                 break;
@@ -169,7 +80,36 @@ public class MainActivity extends AppCompatActivity {
                 score += 0;
                 break;
         }
-
+        radioButton2 = findViewById(selectedId);
+        switch (radioButton2.getText().toString()) {
+            case "Everest":
+                score += 2;
+                break;
+            case "Mc kinley":
+                score += 0;
+                break;
+            case "Nanga parbat":
+                score += 0;
+                break;
+            case "Kilimanjaro":
+                score += 0;
+                break;
+        }
+        radioButton3 = findViewById(selectedId);
+        switch (radioButton3.getText().toString()) {
+            case "Nile":
+                score += 2;
+                break;
+            case "Amazon":
+                score += 0;
+                break;
+            case "Niger":
+                score += 0;
+                break;
+            case "Amur":
+                score += 0;
+                break;
+        }
 
 
         Toast.makeText(this,String.valueOf(score) , Toast.LENGTH_SHORT).show();
